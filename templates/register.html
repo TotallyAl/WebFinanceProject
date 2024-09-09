@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/register.css') }}"
+    />
+  </head>
+  <body>
+    <form action="/register-redirect" method="POST">
+      <h1>Register</h1>
+      <label for="fstname">Firstname:</label>
+      <input type="text" id="input-fstname" name="firstname" required />
+
+      <label for="lastname">Lastname:</label>
+      <input type="text" id="input-lstname" name="lastname" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="input-pwd" name="password" required />
+
+      <input type="submit" value="Submit" />
+
+      <p id="account-login">
+        Already have an account ? <a href="/login">Login</a>
+      </p>
+    </form>
+  </body>
+</html>

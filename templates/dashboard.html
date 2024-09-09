@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <script type="text/javascript" src="app.js" defer></script>
+  </head>
+  <body>
+    <nav id="sidebar">
+      <ul>
+        <li>
+          <span class="logo">18-OA</span>
+          <button onclick="toggleSidebar()" id="toggle-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z"
+              />
+            </svg>
+          </button>
+        </li>
+        <!-- Dashboard Page -->
+        <li class="active">
+          <a href="/dashboard">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"
+              />
+            </svg>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <!-- Payments Page -->
+        <li>
+          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M200-280v-280h80v280h-80Zm240 0v-280h80v280h-80ZM80-120v-80h800v80H80Zm600-160v-280h80v280h-80ZM80-640v-80l400-200 400 200v80H80Zm178-80h444-444Zm0 0h444L480-830 258-720Z"
+              />
+            </svg>
+            <span>Payments</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+            </svg>
+          </button>
+          <ul class="sub-menu">
+            <div>
+              <li><a href="#">Add</a></li>
+              <li><a href="/payment-history">History</a></li>
+              <li><a href="#">Modify</a></li>
+            </div>
+          </ul>
+        </li>
+        <!-- Categories -->
+        <li>
+          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M222-200 80-342l56-56 85 85 170-170 56 57-225 226Zm0-320L80-662l56-56 85 85 170-170 56 57-225 226Zm298 240v-80h360v80H520Zm0-320v-80h360v80H520Z"
+              />
+            </svg>
+            <span>Categories</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+            </svg>
+          </button>
+          <ul class="sub-menu">
+            <div>
+              <li><a href="#">Add</a></li>
+              <li><a href="#">Modify</a></li>
+              <li><a href="#">List</a></li>
+            </div>
+          </ul>
+        </li>
+        <!-- Profile -->
+        <li>
+          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"
+              />
+            </svg>
+            <span>Profiles</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+            </svg>
+          </button>
+          <ul class="sub-menu">
+            <div>
+              <li><a href="#">Add</a></li>
+              <li><a href="#">List</a></li>
+            </div>
+          </ul>
+        </li>
+        <!-- Incoming -->
+        <li>
+          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M160-240v-320 13-173 480Zm0-400h640v-80H160v80Zm307 480H160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v210q-36-25-78-37.5T716-560q-54 0-104 21t-88 59H160v240h283q3 21 9 41t15 39Zm320-25 28-28-75-75v-112h-40v128l87 87ZM721-80q-84 0-142.5-58T520-280q0-84 58.5-142T721-480q83 0 141 58.5T920-280q0 83-58 141.5T721-80Z"
+              />
+            </svg>
+            <span>Incoming</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+            </svg>
+          </button>
+          <ul class="sub-menu">
+            <div>
+              <li><a href="#">Add</a></li>
+              <li><a href="#">List</a></li>
+            </div>
+          </ul>
+        </li>
+        <!-- Savings -->
+        <li>
+          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M680-840v80h-40v327l-80-80v-247H400v87l-87-87-33-33v-47h400ZM480-40l-40-40v-240H240v-80l80-80v-46L56-792l56-56 736 736-58 56-264-264h-6v240l-40 40ZM354-400h92l-44-44-2-2-46 46Zm126-193Zm-78 149Z"
+              />
+            </svg>
+            <span>Savings</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+            </svg>
+          </button>
+          <ul class="sub-menu">
+            <div>
+              <li><a href="#">Add</a></li>
+              <li><a href="#">Modify</a></li>
+              <li><a href="#">List</a></li>
+            </div>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <!-- Main page -->
+    <main>
+      <div class="container">
+        <h2>Hello World</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+          placeat tempore nesciunt culpa suscipit, amet eum voluptates sapiente
+          veritatis ea aliquam reiciendis qui? Labore nulla aut minus, natus
+          eius recusandae!
+        </p>
+      </div>
+      <div class="container">
+        <h2>Example heading</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+          aspernatur voluptatibus consequatur sit alias maxime quibusdam hic
+          tempora, reprehenderit beatae inventore, earum, facilis id
+          consequuntur ratione eligendi velit ullam neque quidem dolorum
+          voluptas vero aliquam maiores excepturi? Incidunt repellendus dolores
+          nobis eveniet, odio ipsam a? Dolorem et, quisquam dolores commodi
+          explicabo eius vero distinctio laboriosam harum ipsam voluptates id
+          quidem veniam molestiae quasi, illum eum dolore molestias numquam quod
+          reprehenderit sit? Error at quod aperiam repellendus nisi dolorum a
+          temporibus dolor soluta perspiciatis eligendi, voluptatum dolorem id
+          maiores necessitatibus aut. Maxime reprehenderit doloribus nemo quas
+          beatae. Nulla repellendus quia ex.
+        </p>
+      </div>
+      <div class="container">
+        <h2>Lorem Ipsum</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque
+          laudantium fuga repellendus magni et sint atque quibusdam quis dicta,
+          itaque deserunt, dolorem cupiditate doloremque nam libero! Cupiditate
+          ab libero eius esse reprehenderit atque delectus, error quas labore,
+          deserunt animi voluptas quos, quisquam quo vero minima. Modi quasi
+          asperiores aliquid perferendis ab in ea omnis nisi fugit voluptates,
+          itaque labore placeat? Atque eveniet id rem accusamus eaque maxime
+          soluta quia possimus in. Ipsum ut quo nobis, voluptatem cumque ipsa,
+          similique pariatur omnis officia quod quidem doloremque unde impedit
+          asperiores eveniet corrupti natus commodi quisquam nesciunt veritatis
+          sequi magni sint? Repudiandae at saepe recusandae harum mollitia
+          voluptatibus tempore perspiciatis voluptatum explicabo accusantium
+          asperiores, labore magnam tempora nemo expedita ipsam ipsum, sint
+          quibusdam esse a numquam velit soluta? Repellendus culpa quaerat
+          labore at enim modi quam dolorum officiis, beatae molestiae ullam
+          praesentium reprehenderit sint neque numquam quisquam nemo corrupti
+          animi! Quo, ipsam quos!
+        </p>
+      </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

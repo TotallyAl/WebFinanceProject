@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/login.css') }}"
+    />
+  </head>
+  <body>
+    <form action="/login-redirect" method="POST">
+      <h1>Login</h1>
+      <label for="use_ID">User ID:</label>
+      <input type="text" id="input-userid" name="userID" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="input-pwd" name="password" required />
+
+      <input type="submit" value="Submit" />
+
+      <p>Don't have an account ? <a href="/register">Register</a></p>
+    </form>
+  </body>
+</html>

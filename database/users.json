@@ -1,0 +1,18 @@
+{
+  "AlDetienne": {
+    "password": "9a917cc5986b3c32e07ca4a556362fd5d00f1adbf15ec51d5b0b4157973fcbee",
+    "salt": "0bd2c6a8f9f1701adb45e776de75d043"
+  },
+  "FrDetienne": {
+    "password": "0d4986872f8039c6e54f1be953db068336b579dc36febb521f33b2acaf76e358",
+    "salt": "3dcdb2364a37742aa864a20f4b800808"
+  },
+  "AnBaiwir": {
+    "password": "2e596bfae3b9e8a746099020e06932adb4abc18fd179083da603b5ea422d3989",
+    "salt": "75f05d98f30d02615a46010f0b1a585f"
+  },
+  "NaLouon": {
+    "password": "b05c3b41476c6a6a989a7edb127f83da6f3f6cde67a3446d6486f0e43d1fa21a",
+    "salt": "126b437b658a6516713a94f5684b13cd"
+  }
+}
